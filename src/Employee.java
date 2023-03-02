@@ -12,9 +12,16 @@ public class Employee {
         this.id = count;
         count++;
     }
-
-
-
-
-
+    public String getFio() {
+        return this.fio;
+    }
+    public int getDepartment() {
+        return this.department;
+    }
+    public int getSalary() {
+        return this.salary;
+    }
+    public int getId() {
+        return this.id;
+    }
 }
