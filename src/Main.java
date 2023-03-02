@@ -1,5 +1,6 @@
 import org.w3c.dom.ls.LSOutput;
 
+import javax.naming.PartialResultException;
 import java.sql.SQLOutput;
 
 public class Main {
@@ -18,5 +19,7 @@ public class Main {
         for (int i = 0; i < employees.length; i++) {
             System.out.println(employees[i]);
         }
+            int sum = Employee.sum(employees);
+            System.out.println(sum);
     }
 }

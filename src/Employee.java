@@ -36,7 +36,18 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
     public String toString() {
         return id + ". " + fio + ". Отдел: " + department + ". Заработная плата: " + salary + " руб.";
+    }
+
+    public static int sum(int arr) {
+        int sum = 0;
+        for (int i : arr) {
+            sum = sum + i;
+        }
+        return sum;
+        // нужно сделат ьметод, который посчитает сумму всех зарплат, попробовать вытянуть из массива черерз getSalary зарплату и посчитать через цикл.
+
     }
 }
