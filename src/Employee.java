@@ -1,5 +1,5 @@
 public class Employee {
-    static int count = 0;
+    static int count = 1;
     String fio;
     int department;
     int salary;
@@ -35,5 +35,8 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+    public String toString() {
+        return id + ". " + fio + ". Отдел: " + department + ". Заработная плата: " + salary + " руб.";
     }
 }

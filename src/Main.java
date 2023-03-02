@@ -15,5 +15,8 @@ public class Main {
         employees[7] = new Employee("Беспалова Роксана Еремеевна", 2, 44_277);
         employees[8] = new Employee("Лазарева Хильда Дмитрьевна", 5, 69_719);
         employees[9] = new Employee("Уварова Дана Евгеньевна", 5, 27_679);
+        for (int i = 0; i < employees.length; i++) {
+            System.out.println(employees[i]);
+        }
     }
 }
