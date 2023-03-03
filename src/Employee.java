@@ -2,7 +2,7 @@ public class Employee {
     String fio;
     int department;
     int salary;
-    private static int idCount = 0;
+    private static int idCount = 1;
     private int id;
 
     public Employee(String fio, int department, int salary) {
@@ -44,12 +44,12 @@ public class Employee {
         return id + ". " + fio + ". Отдел: " + department + ". Заработная плата: " + salary + " руб.";
     }
 
-     // public static Employee toPrint(Employee arr[]) {
-     //   for (int i = 0; i < arr.length; i++) {
-     //       System.out.println(arr[i]);
-     //   }
-     //   return arr[];
-    //}
+      public static Employee[] toPrint(Employee [] a) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
+        return a;
+    }
 
 
     public static int sum (Employee[] arr) {
