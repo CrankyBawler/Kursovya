@@ -1,27 +1,30 @@
 public class Employee {
-    static int count = 1;
     String fio;
     int department;
     int salary;
-    int id;
+    private static int idCount = 0;
+    private int id;
 
     public Employee(String fio, int department, int salary) {
         this.fio = fio;
         this.department = department;
         this.salary = salary;
-        this.id = count;
-        count++;
+        this.id = idCount;
+        idCount++;
     }
 
     public String getFio() {
+
         return this.fio;
     }
 
     public int getDepartment() {
+
         return this.department;
     }
 
     public int getSalary() {
+
         return this.salary;
     }
 
@@ -41,13 +44,24 @@ public class Employee {
         return id + ". " + fio + ". Отдел: " + department + ". Заработная плата: " + salary + " руб.";
     }
 
-    public static int sum(int arr) {
-        int sum = 0;
-        for (int i : arr) {
-            sum = sum + i;
-        }
-        return sum;
-        // нужно сделат ьметод, который посчитает сумму всех зарплат, попробовать вытянуть из массива черерз getSalary зарплату и посчитать через цикл.
+     // public static Employee toPrint(Employee arr[]) {
+     //   for (int i = 0; i < arr.length; i++) {
+     //       System.out.println(arr[i]);
+     //   }
+     //   return arr[];
+    //}
 
+
+    public static int sum (Employee[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int a = arr[i].getSalary();
+            sum = sum + a;
+        }
+        System.out.println("Сумма затрат на зарплаты в месяц составляет " + sum + " рублей.");
+        return sum;
     }
 }
+
+
+
