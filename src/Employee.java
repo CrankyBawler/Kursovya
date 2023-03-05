@@ -65,11 +65,24 @@ public class Employee {
         int a = 200_000;
         String b = null;
         for (int i = 0; i < arr.length; i++) {
-            if (a <= arr[i].getSalary());
-            a = arr[i].getSalary();
-            b = arr[i].getFio();
+            if (arr[i].getSalary()<= a){
+                a = arr[i].getSalary();
+                b = arr[i].getFio();
+            }
         }
         System.out.println("Минимальная заработная плата составляет " + a + " рублей, у сторудника " + b);
+        return a;
+    }
+    public static int max (Employee[] arr) {
+        int a = 0;
+        String b = null;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].getSalary()>= a) {
+                a = arr[i].getSalary();
+                b = arr[i].getFio();
+            }
+        }
+        System.out.println("Максимальная заработная плата составляет " + a + " рублей, у сторудника " + b);
         return a;
     }
 
