@@ -8,7 +8,7 @@ public class Main {
         Employee[] employees = new Employee[10];
         employees[0] = new Employee("Бобров Ефим Тимофеевич", 4, 26_136);
         employees[1] = new Employee("Гуляев Тихон Константинович", 4, 56_272);
-        employees[2] = new Employee("Шашков Савелий Георгьевич", 1, 39_104);
+        employees[2] = new Employee("Шашков Савелий Георгьевич", 1, 29_104);
         employees[3] = new Employee("Николаев Остап Пётрович", 3, 56_153);
         employees[4] = new Employee("Шаров Алексей Антонович", 3, 42_883);
         employees[5] = new Employee("Вишнякова Дарина Валентиновна", 1, 96_463);
