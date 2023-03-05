@@ -17,29 +17,24 @@ public class Employee {
 
         return this.fio;
     }
-
     public int getDepartment() {
-
         return this.department;
     }
-
     public int getSalary() {
-
         return this.salary;
     }
-
     public int getId() {
         return this.id;
     }
-
-    public void setDepartment(int department) {
+    public void setFio(String fio) {
+        this.fio = fio;
+    }
+    public void setDepartment(int fio) {
         this.department = department;
     }
-
-    public void setSalary(int salary) {
+    public void setSalary(int Salary) {
         this.salary = salary;
     }
-
     public String toString() {
         return id + ". " + fio + ". Отдел: " + department + ". Заработная плата: " + salary + " руб.";
     }
