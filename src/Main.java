@@ -22,6 +22,7 @@ public class Main {
         Employee.min(employees);
         Employee.max(employees);
         Employee.middle(employees);
+        Employee.toPrintFio(employees);
 
 
 

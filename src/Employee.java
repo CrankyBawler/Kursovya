@@ -50,6 +50,13 @@ public class Employee {
         }
         return a;
     }
+    public static Employee[] toPrintFio(Employee [] a) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i].getFio());
+        }
+        return a;
+    }
+
 
 
     public static int sum (Employee[] arr) {
@@ -77,7 +84,7 @@ public class Employee {
         System.out.println("Минимальная заработная плата составляет " + a + " рублей, у сторудника " + b);
         return a;
     }
-    public static int max (Employee[] arr) {
+        public static int max (Employee[] arr) {
         int a = 0;
         String b = null;
         for (int i = 0; i < arr.length; i++) {
@@ -95,7 +102,6 @@ public class Employee {
         float middle = (float) Employee.sum(arr) / a;
         System.out.println("Средняя сумма заработной платы составила " + middle);
         return middle;
-
     }
 
 }
