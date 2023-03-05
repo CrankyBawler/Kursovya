@@ -19,6 +19,7 @@ public class Main {
 
         Employee.toPrint(employees);
         Employee.sum(employees);
+        Employee.min(employees);
 
 
 
