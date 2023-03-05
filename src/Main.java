@@ -18,9 +18,10 @@ public class Main {
         employees[9] = new Employee("Уварова Дана Евгеньевна", 5, 27_679);
 
         Employee.toPrint(employees);
-        Employee.sum(employees);
+        Employee.toPrintSum(employees);
         Employee.min(employees);
         Employee.max(employees);
+        Employee.middle(employees);
 
 
 

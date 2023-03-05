@@ -58,8 +58,12 @@ public class Employee {
             int a = arr[i].getSalary();
             sum = sum + a;
         }
-        System.out.println("Сумма затрат на зарплаты в месяц составляет " + sum + " рублей.");
         return sum;
+    }
+    public static int toPrintSum (Employee[]arr) {
+        Employee.sum(arr);
+        System.out.println("Сумма затрат на зарплаты в месяц составляет " + Employee.sum(arr) + " рублей.");
+        return Employee.sum(arr);
     }
     public static int min (Employee[] arr) {
         int a = 200_000;
@@ -84,6 +88,14 @@ public class Employee {
         }
         System.out.println("Максимальная заработная плата составляет " + a + " рублей, у сторудника " + b);
         return a;
+    }
+    public static float middle (Employee[] arr) {
+        Employee.sum(arr);
+        int a = arr.length;
+        float middle = (float) Employee.sum(arr) / a;
+        System.out.println("Средняя сумма заработной платы составила " + middle);
+        return middle;
+
     }
 
 }
