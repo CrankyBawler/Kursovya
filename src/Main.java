@@ -5,6 +5,7 @@ import java.sql.SQLOutput;
 
 public class Main {
     static Employee[] employees = new Employee[10];
+
     public static void main(String[] args) {
         employees[0] = new Employee("Бобров Ефим Тимофеевич", 4, 26_136);
         employees[1] = new Employee("Гуляев Тихон Константинович", 4, 56_272);
@@ -28,13 +29,30 @@ public class Main {
         System.out.println("Средняя сумма зарплаты " + averageSalary());
         System.out.println();
         printFIO();
+        System.out.println();
+        indexSalary(5);
+        System.out.println();
+        System.out.println(minDepartmentSalary(4));
+        System.out.println();
+        System.out.println(maxDepartmentSalary(4));
+        System.out.println();
+        System.out.println(averageDepartmentSalary(4));
+        System.out.println();
+        indexDepartmentSalary(5, 4);
+        System.out.println();
+        printDepartment(4);
+        System.out.println();
+        printEmployessMinSalary(40000);
+        System.out.println();
+        printEmployessMaxSalary(40000);
+    }
 
-    }
     static void printEmployess() {
-    for (Employee employee : employees) {
-        System.out.println(employee);
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
     }
-}
+
     static int sum() {
         int sum = 0;
         for (Employee employee : employees) {
@@ -42,10 +60,11 @@ public class Main {
         }
         return sum;
     }
+
     static Employee minSalary() {
         Employee min = null;
         for (Employee employee : employees) {
-            if (min == null|| employee.getSalary()< min.getSalary()) {
+            if (min == null || employee.getSalary() < min.getSalary()) {
                 min = employee;
             }
         }
@@ -69,6 +88,91 @@ public class Main {
     static void printFIO() {
         for (Employee employee : employees) {
             System.out.println(employee.getFio());
+        }
+    }
+
+    static void indexSalary(int index) {
+        for (Employee employee : employees) {
+            employee.setSalary((employee.getSalary() + (employee.getSalary() * index) / 100));
+            System.out.println("Заработная плата сотрубника " + employee.getFio() + " после индексации равна " + employee.getSalary());
+        }
+    }
+
+    static Employee minDepartmentSalary(int department) {
+        Employee min = null;
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == department) {
+                if (min == null || employee.getSalary() < min.getSalary()) {
+                    min = employee;
+                }
+            }
+        }
+        return min;
+    }
+
+
+    static Employee maxDepartmentSalary(int department) {
+        Employee max = null;
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == department) {
+                if (max == null || employee.getSalary() > max.getSalary()) {
+                    max = employee;
+                }
+            }
+        }
+        return max;
+    }
+
+    static int sumDepartment(int department) {
+        int sum = 0;
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == department) {
+                sum += employee.getSalary();
+            }
+        }
+        return sum;
+    }
+
+    static double averageDepartmentSalary(int department) {
+        int countDep = 0;
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == department) {
+                countDep++;
+            }
+        }
+        return (double) sumDepartment(department) / countDep;
+    }
+
+    static void indexDepartmentSalary(int index, int department) {
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == department) {
+                employee.setSalary((employee.getSalary() + (employee.getSalary() * index) / 100));
+                System.out.println("Заработная плата сотрубника " + employee.getFio() + " после индексации равна " + employee.getSalary());
+            }
+        }
+    }
+
+    static void printDepartment(int department) {
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == department) {
+                System.out.println(employee.getId() + " " + employee.getFio() + " " + employee.getSalary());
+            }
+        }
+    }
+
+    static void printEmployessMinSalary(int salary) {
+        for (Employee employee : employees) {
+            if (employee.getSalary() < salary) {
+                System.out.println(employee);
+            }
+        }
+    }
+
+    static void printEmployessMaxSalary(int salary) {
+        for (Employee employee : employees) {
+            if (employee.getSalary() >= salary) {
+                System.out.println(employee);
+            }
         }
     }
 }
