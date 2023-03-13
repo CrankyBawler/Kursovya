@@ -56,7 +56,9 @@ public class Main {
     static int sum() {
         int sum = 0;
         for (Employee employee : employees) {
-            sum += employee.getSalary();
+            if (employee != null) {
+                sum += employee.getSalary();
+            }
         }
         return sum;
     }
@@ -64,8 +66,10 @@ public class Main {
     static Employee minSalary() {
         Employee min = null;
         for (Employee employee : employees) {
-            if (min == null || employee.getSalary() < min.getSalary()) {
-                min = employee;
+            if (employee != null) {
+                if (min == null || employee.getSalary() < min.getSalary()) {
+                    min = employee;
+                }
             }
         }
         return min;
@@ -74,8 +78,10 @@ public class Main {
     static Employee maxSalary() {
         Employee max = null;
         for (Employee employee : employees) {
-            if (max == null || employee.getSalary() > max.getSalary()) {
-                max = employee;
+            if (employee != null) {
+                if (max == null || employee.getSalary() > max.getSalary()) {
+                    max = employee;
+                }
             }
         }
         return max;
@@ -87,23 +93,29 @@ public class Main {
 
     static void printFIO() {
         for (Employee employee : employees) {
-            System.out.println(employee.getFio());
+            if (employee != null) {
+                System.out.println(employee.getFio());
+            }
         }
     }
 
     static void indexSalary(int index) {
         for (Employee employee : employees) {
-            employee.setSalary((employee.getSalary() + (employee.getSalary() * index) / 100));
-            System.out.println("Заработная плата сотрубника " + employee.getFio() + " после индексации равна " + employee.getSalary());
+            if (employee != null) {
+                employee.setSalary((employee.getSalary() + (employee.getSalary() * index) / 100));
+                System.out.println("Заработная плата сотрубника " + employee.getFio() + " после индексации равна " + employee.getSalary());
+            }
         }
     }
 
     static Employee minDepartmentSalary(int department) {
         Employee min = null;
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                if (min == null || employee.getSalary() < min.getSalary()) {
-                    min = employee;
+            if (employee != null) {
+                if (employee.getDepartment() == department) {
+                    if (min == null || employee.getSalary() < min.getSalary()) {
+                        min = employee;
+                    }
                 }
             }
         }
@@ -114,9 +126,11 @@ public class Main {
     static Employee maxDepartmentSalary(int department) {
         Employee max = null;
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                if (max == null || employee.getSalary() > max.getSalary()) {
-                    max = employee;
+            if (employee != null) {
+                if (employee.getDepartment() == department) {
+                    if (max == null || employee.getSalary() > max.getSalary()) {
+                        max = employee;
+                    }
                 }
             }
         }
@@ -126,8 +140,10 @@ public class Main {
     static int sumDepartment(int department) {
         int sum = 0;
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                sum += employee.getSalary();
+            if (employee != null) {
+                if (employee.getDepartment() == department) {
+                    sum += employee.getSalary();
+                }
             }
         }
         return sum;
@@ -136,8 +152,10 @@ public class Main {
     static double averageDepartmentSalary(int department) {
         int countDep = 0;
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                countDep++;
+            if (employee != null) {
+                if (employee.getDepartment() == department) {
+                    countDep++;
+                }
             }
         }
         return (double) sumDepartment(department) / countDep;
@@ -145,33 +163,41 @@ public class Main {
 
     static void indexDepartmentSalary(int index, int department) {
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                employee.setSalary((employee.getSalary() + (employee.getSalary() * index) / 100));
-                System.out.println("Заработная плата сотрубника " + employee.getFio() + " после индексации равна " + employee.getSalary());
+            if (employee != null) {
+                if (employee.getDepartment() == department) {
+                    employee.setSalary((employee.getSalary() + (employee.getSalary() * index) / 100));
+                    System.out.println("Заработная плата сотрубника " + employee.getFio() + " после индексации равна " + employee.getSalary());
+                }
             }
         }
     }
 
     static void printDepartment(int department) {
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                System.out.println(employee.getId() + " " + employee.getFio() + " " + employee.getSalary());
+            if (employee != null) {
+                if (employee.getDepartment() == department) {
+                    System.out.println(employee.getId() + " " + employee.getFio() + " " + employee.getSalary());
+                }
             }
         }
     }
 
     static void printEmployessMinSalary(int salary) {
         for (Employee employee : employees) {
-            if (employee.getSalary() < salary) {
-                System.out.println(employee);
+            if (employee != null) {
+                if (employee.getSalary() < salary) {
+                    System.out.println(employee);
+                }
             }
         }
     }
 
     static void printEmployessMaxSalary(int salary) {
         for (Employee employee : employees) {
-            if (employee.getSalary() >= salary) {
-                System.out.println(employee);
+            if (employee != null) {
+                if (employee.getSalary() >= salary) {
+                    System.out.println(employee);
+                }
             }
         }
     }
